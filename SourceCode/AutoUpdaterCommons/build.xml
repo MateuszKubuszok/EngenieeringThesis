@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<project name="commons" default="compress">
+	<target name="initialize" description="Initializes build">
+		<mkdir dir="bin" />
+	</target>
+	
+	<target name="compile" depends="initialize" description="Compiles *.java into *.class">
+		<javac srcdir="src" destdir="bin" />
+	</target>
+	
+	<target name="compress" depends="compile" description="Create AutoUpdaterCommons.jar file">
+		<jar destfile="../AutoUpdater/AutoUpdaterCommons.jar" basedir="bin" />
+	</target>
+	
+	<target name="clean" description="Removes binaries">
+		<delete dir="bin" />
+	</target>
+</project>

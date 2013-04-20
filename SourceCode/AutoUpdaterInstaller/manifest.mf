@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.3
+Created-By: 1.7.0-b147 (Oracle Corporation)
+Main-Class: com/autoupdater/installer/Main
+Class-Path: ./AutoUpdaterCommons.jar ./AutoUpdaterSystem.jar ./librari
+ es/guava-13.0.1.jar
+

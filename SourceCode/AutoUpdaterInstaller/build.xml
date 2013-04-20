@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<project name="installer" default="compress">
+	<target name="initialize" description="Initializes build">
+		<mkdir dir="bin" />
+		<mkdir dir="../AutoUpdater" />
+		<mkdir dir="../AutoUpdater/libraries" />
+		<copy todir="../AutoUpdater/libraries">
+			<fileset dir="libraries" />
+		</copy>
+	</target>
+	
+	<target name="compile" depends="initialize" description="Compiles *.java into *.class">
+		<javac srcdir="src" destdir="bin" />
+	</target>
+	
+	<target name="compress" depends="compile" description="Create Installer.jar file">
+		<manifest file="manifest.mf">
+			<attribute name="Main-Class" value="com/autoupdater/installer/Main" />
+			<attribute name="Class-Path" value="./AutoUpdaterCommons.jar ./AutoUpdaterSystem.jar ./libraries/guava-13.0.1.jar" />
+		</manifest>
+		<jar destfile="../AutoUpdater/Installer.jar" basedir="bin" manifest="manifest.mf" />
+	</target>
+	
+	<target name="clean" description="Removes binaries">
+		<delete dir="bin" />
+	</target>
+</project>

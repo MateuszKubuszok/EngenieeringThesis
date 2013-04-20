@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<project name="gui" default="compress">
+	<target name="initialize" description="Initializes build">
+		<mkdir dir="bin" />
+		<mkdir dir="../AutoUpdater" />
+		<mkdir dir="../AutoUpdater/libraries" />
+		<copy todir="../AutoUpdater/libraries">
+			<fileset dir="libraries" />
+		</copy>
+	</target>
+	
+	<target name="compile" depends="initialize" description="Compiles *.java into *.class">
+		<javac srcdir="src" destdir="bin" />
+	</target>
+	
+	<target name="compress" depends="compile" description="Create Client.jar file">
+		<manifest file="manifest.mf">
+			<attribute name="Main-Class" value="com.autoupdater.gui.main.Main" />
+			<attribute name="Class-Path" value="./AutoUpdaterLibrary.jar ./AutoUpdaterSystem.jar ./guava-13.0.1.jar ./libraries/forms-1.3.0.jar ./libraries/seaglasslookandfeel-0.2.jar" />
+		</manifest>
+		<jar destfile="../AutoUpdater/Client.jar" basedir="bin" manifest="manifest.mf" />
+	</target>
+	
+	<target name="clean" description="Removes binaries">
+		<delete dir="bin" />
+	</target>
+</project>

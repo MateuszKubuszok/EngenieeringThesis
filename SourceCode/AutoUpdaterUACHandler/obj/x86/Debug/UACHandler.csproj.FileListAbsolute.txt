@@ -1,0 +1,5 @@
+D:\userdata\kubuszok\Workspaces\AutoUpdater\Project1\bin\Debug\Project1.exe
+D:\userdata\kubuszok\Workspaces\AutoUpdater\Project1\bin\Debug\Project1.pdb
+D:\userdata\kubuszok\Workspaces\AutoUpdater\Project1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\userdata\kubuszok\Workspaces\AutoUpdater\Project1\obj\x86\Debug\Project1.exe
+D:\userdata\kubuszok\Workspaces\AutoUpdater\Project1\obj\x86\Debug\Project1.pdb
